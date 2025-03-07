@@ -1,0 +1,107 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Palanquin:wght@100;200;300;400;500;600;700&display=swap");
+
+@import "tailwindcss";
+
+/* Global Styles */
+* {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+/* Theme Configuration */
+@theme {
+  /* Font Families */
+  --screen-sm: 640px;
+  --screen-md: 768px;
+  --screen-lg: 1024px;
+  --screen-xl: 1280px;
+  --screen-2xl: 1536px;
+  --font-family-palanquin: "Palanquin", sans-serif;
+  --font-family-montserrat: "Montserrat", sans-serif;
+
+  /* Font Sizes */
+  --font-size-xs: 12px;
+  --font-size-sm: 14px;
+  --font-size-base: 16px;
+  --font-size-lg: 18px;
+  --font-size-xl: 20px;
+  --font-size-2xl: 24px;
+  --font-size-3xl: 28px;
+  --font-size-4xl: 48px;
+  --font-size-8xl: 96px;
+
+  /* Line Heights */
+  --line-height-xs: 16px;
+  --line-height-sm: 20px;
+  --line-height-base: 19.5px;
+  --line-height-lg: 21.94px;
+  --line-height-xl: 24.38px;
+  --line-height-2xl: 29.26px;
+  --line-height-3xl: 50px;
+  --line-height-4xl: 58px;
+  --line-height-8xl: 106px;
+
+  /* Colors */
+  --color-primary: #eceeff;
+  --color-coral-red: #ff6452;
+  --color-slate-gray: #6d6d6d;
+  --color-pale-blue: #f5f6ff;
+  --color-white-400: rgba(255, 255, 255, 0.8);
+
+  /* Box Shadow */
+  --box-shadow-3xl: 0 10px 40px rgba(0, 0, 0, 0.1);
+
+  /* Background Images */
+  --background-image-hero: url("assets/images/collection-background.svg");
+  --background-image-card: url("assets/images/thumbnail-background.svg");
+
+  /* Screens */
+  --screen-wide: 1440px;
+}
+
+/* Component Styles */
+@layer components {
+  .max-container {
+    max-width: 1440px;
+    margin: 0 auto;
+  }
+
+  .input {
+    @apply sm:flex-1 max-sm:w-full text-base leading-normal text-[color:var(--color-slate-gray)] pl-5 max-sm:p-5 outline-none sm:border-none border max-sm:border-[color:var(--color-slate-gray)] max-sm:rounded-full;
+  }
+}
+
+/* Utility Styles */
+@layer utilities {
+  .padding {
+    @apply sm:px-16 px-8 sm:py-24 py-12;
+  }
+
+  .padding-x {
+    @apply sm:px-16 px-8;
+  }
+
+  .padding-y {
+    @apply sm:py-24 py-12;
+  }
+
+  .padding-l {
+    @apply sm:pl-16 pl-8;
+  }
+
+  .padding-r {
+    @apply sm:pr-16 pr-8;
+  }
+
+  .padding-t {
+    @apply sm:pt-24 pt-12;
+  }
+
+  .padding-b {
+    @apply sm:pb-24 pb-12;
+  }
+
+  .info-text {
+    @apply font-[var(--font-family-montserrat)] text-[color:var(--color-slate-gray)] text-lg leading-7;
+  }
+}
