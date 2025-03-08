@@ -2,8 +2,22 @@ import React from "react";
 import Button from "./Button";
 import { shoes, statistics } from "../Constants";
 import { bigShoe1 } from "../assets/images";
-import { arrowRigt } from "../assets/icons";
+import arrowRight from "../assets/icons/arrow-right.svg";
 function Hero(props) {
+  const items = statistics.map((item) => {
+    return (
+      <>
+        <div>
+          <p className="text-4xl font-family-palanquin font-bold">
+            {item.value}
+          </p>
+          <p className="leading-7 font-family-montserrat text-slate-gray">
+            {item.label}
+          </p>
+        </div>
+      </>
+    );
+  });
   return (
     <>
       <section
@@ -19,14 +33,16 @@ function Hero(props) {
               The New Arrival
             </span>
             <br />
-            <span className="mt-3 inline-block text-coral-red">Nike</span> Shoes
+            <span className="mt-5 inline-block text-coral-red">Nike</span> Shoes
           </p>
           <p className="font-family-montserrat text-slate-gray text-lg leading-8 mt-6 mb-14 sm:max-w-sm">
             Discover new shoes, quality comfort, and innovation for your active
             life.
           </p>
-          <Button />
+          <Button img={arrowRight} />
+          <div className="flex flex-row gap-10 mt-10">{items}</div>
         </div>
+        <div></div>
       </section>
     </>
   );
